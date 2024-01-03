@@ -1,18 +1,20 @@
+import { Movie } from '../../classes/Movie'
+
 export const state = () => ({
   detail: {},
-  topRatedMovieList: [],
-  popularMovieList: [],
+  topRatedList: [],
+  popularList: [],
 })
 
 export const mutations = {
   setDetail(state, detail) {
     state.detail = detail
   },
-  setTopRatedList(state, topRatedMovieList) {
-    state.topRatedMovieList = topRatedMovieList
+  setTopRatedList(state, topRatedList) {
+    state.topRatedList = topRatedList
   },
-  setPopularList(state, popularMovieList) {
-    state.popularMovieList = popularMovieList
+  setPopularList(state, popularList) {
+    state.popularList = popularList
   },
 }
 
@@ -71,12 +73,12 @@ export const actions = {
 
 export const getters = {
   getDetail(state) {
-    return state.detail
+    return new Movie(state.detail)
   },
   getTopRatedList(state) {
-    return state.topRatedMovieList
+    return state.topRatedList.map((movie) => new Movie(movie))
   },
   getPopularList(state) {
-    return state.popularMovieList
+    return state.popularList.map((movie) => new Movie(movie))
   },
 }

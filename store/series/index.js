@@ -1,3 +1,5 @@
+import { Series } from '../../classes/Series'
+
 export const state = () => ({
   detail: {},
   topRatedList: [],
@@ -69,12 +71,12 @@ export const actions = {
 
 export const getters = {
   getDetail(state) {
-    return state.detail
+    return new Series(state.detail)
   },
   getTopRatedList(state) {
-    return state.topRatedList
+    return state.topRatedList.map((series) => new Series(series))
   },
   getPopularList(state) {
-    return state.popularList
+    return state.popularList.map((series) => new Series(series))
   },
 }
