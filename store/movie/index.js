@@ -1,4 +1,4 @@
-import { Movie } from '../../classes/Movie'
+import { Content } from '../../classes/Content'
 
 export const state = () => ({
   detail: {},
@@ -107,18 +107,18 @@ export const actions = {
 
 export const getters = {
   getDetail(state) {
-    return new Movie(state.detail)
+    return new Content(state.detail)
   },
   getTopRatedList(state) {
-    return state.topRatedList.map((movie) => new Movie(movie))
+    return state.topRatedList.map((movie) => new Content(movie))
   },
   getPopularList(state) {
-    return state.popularList.map((movie) => new Movie(movie))
+    return state.popularList.map((movie) => new Content(movie))
   },
   getNowPlayingList(state) {
-    return state.nowPlayingList.map((movie) => new Movie(movie))
+    return state.nowPlayingList.map((movie) => new Content(movie))
   },
   getUpComingList(state) {
-    return state.upComingList.map((movie) => new Movie(movie))
+    return state.upComingList.map((movie) => new Content(movie))
   },
 }
