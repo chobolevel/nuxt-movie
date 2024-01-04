@@ -3,11 +3,11 @@ import { mapGetters } from 'vuex'
 export default {
   computed: {
     ...mapGetters({
-      getDetail: 'movie/getDetail',
-      getTopRatedList: 'movie/getTopRatedList',
-      getPopularList: 'movie/getPopularList',
-      getNowPlayingList: 'movie/getNowPlayingList',
-      getUpComingList: 'movie/getUpComingList',
+      getMovieDetail: 'movie/getDetail',
+      getTopRatedMovieList: 'movie/getTopRatedList',
+      getPopularMovieList: 'movie/getPopularList',
+      getNowPlayingMovieList: 'movie/getNowPlayingList',
+      getUpComingMovieList: 'movie/getUpComingList',
     }),
   },
 }
