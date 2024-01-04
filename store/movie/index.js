@@ -4,6 +4,8 @@ export const state = () => ({
   detail: {},
   topRatedList: [],
   popularList: [],
+  nowPlayingList: [],
+  upComingList: [],
 })
 
 export const mutations = {
@@ -15,6 +17,12 @@ export const mutations = {
   },
   setPopularList(state, popularList) {
     state.popularList = popularList
+  },
+  setNowPlayingList(state, nowPlayingList) {
+    state.nowPlayingList = nowPlayingList
+  },
+  setUpComingList(state, upComingList) {
+    state.upComingList = upComingList
   },
 }
 
@@ -34,40 +42,66 @@ export const actions = {
   async setTopRatedListInfo({ commit }) {
     const {
       data: { results },
-    } = await this.$axios.get(
-      `tmdb/3/movie/top_rated?language=${process.env.TMDB_LANGUAGE}&page=1&region=${process.env.TMDB_REGION}`,
-      {
-        params: {
-          language: process.env.TMDB_LANGUAGE,
-          page: 1,
-          region: process.env.TMDB_REGION,
-        },
-        headers: {
-          accept: 'application/json',
-          Authorization: process.env.TMDB_ACCESS_TOKEN,
-        },
-      }
-    )
+    } = await this.$axios.get(`tmdb/3/movie/top_rated`, {
+      params: {
+        language: process.env.TMDB_LANGUAGE,
+        page: 1,
+        region: process.env.TMDB_REGION,
+      },
+      headers: {
+        accept: 'application/json',
+        Authorization: process.env.TMDB_ACCESS_TOKEN,
+      },
+    })
     commit('setTopRatedList', results)
   },
   async setPopularListInfo({ commit }) {
     const {
       data: { results },
-    } = await this.$axios.get(
-      `tmdb/3/movie/popular?language=${process.env.TMDB_LANGUAGE}&page=1&region=${process.env.TMDB_REGION}`,
-      {
-        params: {
-          language: process.env.TMDB_LANGUAGE,
-          page: 1,
-          region: process.env.TMDB_REGION,
-        },
-        headers: {
-          accept: 'application/json',
-          Authorization: process.env.TMDB_ACCESS_TOKEN,
-        },
-      }
-    )
+    } = await this.$axios.get(`tmdb/3/movie/popular`, {
+      params: {
+        language: process.env.TMDB_LANGUAGE,
+        page: 1,
+        region: process.env.TMDB_REGION,
+      },
+      headers: {
+        accept: 'application/json',
+        Authorization: process.env.TMDB_ACCESS_TOKEN,
+      },
+    })
     commit('setPopularList', results)
+  },
+  async setNowPlayingListInfo({ commit }) {
+    const {
+      data: { results },
+    } = await this.$axios.get(`tmdb/3/movie/now_playing`, {
+      params: {
+        language: process.env.TMDB_LANGUAGE,
+        page: 1,
+        region: process.env.TMDB_REGION,
+      },
+      headers: {
+        accept: 'application/json',
+        Authorization: process.env.TMDB_ACCESS_TOKEN,
+      },
+    })
+    commit('setNowPlayingList', results)
+  },
+  async setUpComingListInfo({ commit }) {
+    const {
+      data: { results },
+    } = await this.$axios.get('tmdb/3/movie/upcoming', {
+      params: {
+        language: process.env.TMDB_LANGUAGE,
+        page: 1,
+        region: process.env.TMDB_REGION,
+      },
+      headers: {
+        accept: 'application/json',
+        Authorization: process.env.TMDB_ACCESS_TOKEN,
+      },
+    })
+    commit('setUpComingList', results)
   },
 }
 
@@ -80,5 +114,11 @@ export const getters = {
   },
   getPopularList(state) {
     return state.popularList.map((movie) => new Movie(movie))
+  },
+  getNowPlayingList(state) {
+    return state.nowPlayingList.map((movie) => new Movie(movie))
+  },
+  getUpComingList(state) {
+    return state.upComingList.map((movie) => new Movie(movie))
   },
 }
