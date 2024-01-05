@@ -11,7 +11,13 @@ export default {
       { hid: 'description', name: 'description', content: '' },
       { name: 'format-detection', content: 'telephone=no' },
     ],
-    link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
+    link: [
+      {
+        rel: 'icon',
+        type: 'image/x-icon',
+        href: 'https://assets.nflxext.com/ffe/siteui/common/icons/nficon2016.ico',
+      },
+    ],
     script: [
       {
         src: 'https://kit.fontawesome.com/4f485c5b0b.js',
@@ -21,7 +27,7 @@ export default {
   },
 
   // Global CSS: https://go.nuxtjs.dev/config-css
-  css: [],
+  css: ['~/static/css/init.css', '~/static/css/style.css'],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [],

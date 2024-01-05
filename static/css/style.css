@@ -1,0 +1,64 @@
+:root {
+    --main-font-color: #e50914
+}
+
+/* .root {
+    position: relative;
+    top: 0;
+    left: 0;    
+} */
+
+header {
+    width: 100%;
+    height: 6.8rem;
+    padding: 0 4rem;
+    background-color: #000;
+    position: sticky;
+    top: 0;
+    left: 0;
+    z-index: 3;
+}
+
+header .header-inner {
+    width: inherit;
+    height: inherit;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #000;
+}
+
+header .header-inner > ul {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 3rem;
+}
+
+header .header-inner > ul > li {
+    font-size: 1.4rem;
+}
+
+header .header-inner > ul > li > a {
+    text-decoration: none;
+    color: white;
+}
+
+header .header-inner > ul > li > a.main-logo {
+    color: var(--main-font-color);
+    font-weight: bold;
+    font-size: 3rem;
+    margin-right: 2rem;
+}
+
+section {
+    position: relative;
+    top: -6.8rem;
+    left: 0;
+    width: 100%;
+}
+
+section .main-img {
+    width: 100%;
+}
