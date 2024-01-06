@@ -2,12 +2,6 @@
     --main-font-color: #e50914
 }
 
-/* .root {
-    position: relative;
-    top: 0;
-    left: 0;    
-} */
-
 header {
     width: 100%;
     height: 6.8rem;
@@ -38,6 +32,7 @@ header .header-inner > ul {
 
 header .header-inner > ul > li {
     font-size: 1.4rem;
+    color: white;
 }
 
 header .header-inner > ul > li > a {
@@ -59,6 +54,99 @@ section {
     width: 100%;
 }
 
-section .main-img {
+section .main-content {
     width: 100%;
+    height: 56.25vw;
+    background-image: url(https://occ-0-1360-1361.1.nflxso.net/dnm/api/v6/6AYY37jfdO6hpXcMjf9Yu5cnmO0/AAAABW8fJRu9gPMYrEgZBSDc7uFVZKQLb9xWiWWxiHQGnTfX4tfFmwivHWVvD_7qxqMaQCCi-x13ofynX-FffyFZ3c3JzQhW2D0EICNr.webp?r=595);
+    background-repeat: no-repeat;
+    background-size: cover;
+    gap: 1rem;
+    color: #fff;
+    font-size: 1.2vw;
+}
+
+section .main-content .main-content-inner {
+    width: 70%;
+    height: 100%;
+    padding: 4rem;
+    background: linear-gradient(to right, #000, transparent);
+    display: inline-flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 2rem;
+}
+
+section .main-content .main-content-inner .main-content-title {
+    width: 30vw;
+}
+
+section .main-content .main-content-inner .main-content-title > img {
+    width: 100%;
+}
+
+section .main-content .main-content-inner .main-content-desc {
+    font-size: 1.2vw;
+}
+
+section .main-content .main-content-inner .main-content-btn-area {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 2rem;
+}
+
+section .content-container {
+    position: relative;
+    top: -3vw;
+    width: 100%;
+    padding-left: 4rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10rem;
+}
+
+section .content-container .content-list-area {
+    width: 100%;
+    height: 30rem;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+section .content-container .prev-btn, section .content-container .next-btn {
+    width: 4rem;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: gray;
+    font-size: 2rem;
+    font-weight: bold;
+}
+section .content-container .prev-btn:hover, section .content-container .next-btn:hover {
+    background-color: gray;
+    color: #000;
+}
+
+section .content-container .content-list-area .content-list-area-inner {
+    width: calc(100% - 8rem);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 1rem;
+    overflow: hidden;
+}
+
+section .content-container .content-list-area .content-list-area-inner .content-list-item {
+    min-width: 20rem;
+    height: 30rem;    
+}
+
+section .content-container .content-list-area .content-list-area-inner .content-list-item .content-img {
+    width: 100%;
+    height: 100%;
+    border-radius: 0.4rem;
 }
