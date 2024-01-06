@@ -1,13 +1,13 @@
 <template>
-    <div class="slide-list-area">
+    <div class="content-list-area">
       <span class="prev-btn" @click="handlePrev">
-        <i class="fa-solid fa-chevron-left"></i>
+        {{ '<' }}
       </span>
-      <div class="slide-list-area-inner">
+      <div class="content-list-area-inner">
         <content-list-item v-for="content in contentList" :key="content.id" :content="content" />
       </div>
       <span class="next-btn" @click="handleNext">
-        <i class="fa-solid fa-chevron-right"></i>
+        {{ '>' }}
       </span>
     </div>
 </template>
