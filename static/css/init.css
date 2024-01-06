@@ -107,4 +107,10 @@ body {
 }
 button {
 	all: unset;
+    padding: 1vw 2vw;
+    background-color: #fff;
+    color: #000;
+    font-weight: bold;
+    border-radius: 0.4rem;
+    cursor: pointer;
 }
